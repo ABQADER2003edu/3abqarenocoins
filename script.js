@@ -107,7 +107,7 @@ const updateProgress = (percentage) => {
 // File Handling Functions
 const validateFile = (file) => {
     if (!file.name.toLowerCase().endsWith('.json')) {
-        throw new Error('يرجى اختيار ملف JSON صحيح');
+        throw new Error('الملف الألكتروني به خطأ');
     }
     
     if (file.size > CONFIG.MAX_FILE_SIZE) {
