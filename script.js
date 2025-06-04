@@ -577,7 +577,7 @@ const init = () => {
         console.log('🪙 عبقرينو للعملات القديمة - تم التحميل بنجاح');
     } catch (error) {
         console.error('Error initializing application:', error);
-        showMessage('خطأ في تحميل التطبيق', 'error');
+        showMessage('قم برفع الملف الألكتروني', 'error');
     }
 };
 
