@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عبقرينو للعملات القديمة</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🪙 عبقرينو للعملات القديمة</h1>
+            <p>مدير مجموعة العملات النادرة والتاريخية</p>
+        </div>
+
+        <div class="upload-section" id="uploadSection">
+            <h2 style="color: #2E4D32; margin-bottom: 20px;">ارفع ملف JSON الخاص بمجموعتك</h2>
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">📁</div>
+                <h3>اسحب ملف JSON هنا أو انقر للاختيار</h3>
+                <p style="color: #666; margin-top: 10px;">يجب أن يحتوي الملف على: الكود، العدد، العلامة المميزة</p>
+                <input type="file" id="fileInput" class="file-input" accept=".json">
+                <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
+                    اختر ملف JSON
+                </button>
+                <div class="file-info" id="fileInfo" style="display: none;">
+                    <div class="file-name" id="fileName"></div>
+                    <div class="file-size" id="fileSize"></div>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progressBar"></div>
+                        <span class="progress-text" id="progressText">0%</span>
+                    </div>
+                </div>
+            </div>
+            <div id="message"></div>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p id="loadingText">جاري معالجة الملف...</p>
+        </div>
+
+        <div class="table-container" id="tableContainer">
+            <div class="table-header">
+                <h2>🏛️ مجموعة العملات</h2>
+                <div class="stats" id="stats"></div>
+            </div>
+            
+            <div class="filter-section">
+                <input type="text" id="searchInput" class="filter-input" placeholder="🔍 البحث في المجموعة...">
+                <select id="currencyFilter" class="filter-input">
+                    <option value="">جميع العملات</option>
+                </select>
+                <select id="statusFilter" class="filter-input">
+                    <option value="">جميع الحالات</option>
+                </select>
+                <button class="reset-btn" id="resetFilters">إعادة تعيين</button>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="data-table" id="dataTable">
+                    <thead>
+                        <tr>
+                            <th>الكود</th>
+                            <th>العدد</th>
+                            <th>نوع العملة</th>
+                            <th>القيمة</th>
+                            <th>سنة الإصدار</th>
+                            <th>شهر الإصدار</th>
+                            <th>يوم الإصدار</th>
+                            <th>الحالة</th>
+                            <th>العلامة المميزة</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                    </tbody>
+                </table>
+                <div class="no-results" id="noResults" style="display: none;">
+                    <p>لا توجد نتائج تطابق البحث</p>
+                </div>
+            </div>
+            
+            <div class="pagination" id="pagination">
+                <button class="page-btn" id="prevBtn" disabled>السابق</button>
+                <div class="page-info" id="pageInfo">الصفحة 1 من 1</div>
+                <button class="page-btn" id="nextBtn" disabled>التالي</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
