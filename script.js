@@ -175,7 +175,7 @@ const decodeItem = (code) => {
             return null;
         }
 
-        if (month < 0 || month > 12 || day < 0 || day > 31 || year < 100 || year > 2100) {
+        if ( month > 12 || day > 31 || year < 100 || year > 2100) {
             return null;
         }
 
