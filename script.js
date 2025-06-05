@@ -171,11 +171,11 @@ const decodeItem = (code) => {
         const statusCode = code.substring(15, 16).toUpperCase();
 
         // Validate extracted data
-        if (isNaN(value) || isNaN(month) || isNaN(day) || isNaN(year)) {
+        if (isNaN(value) || isNaN(year)) {
             return null;
         }
 
-        if (month < 1 || month > 12 || day < 1 || day > 31 || year < 100 || year > 2100) {
+        if (month < 0 || month > 12 || day < 0 || day > 31 || year < 100 || year > 2100) {
             return null;
         }
 
