@@ -456,8 +456,13 @@ body {
         align-items: center;
     }
     
+    .table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
     .data-table {
-        font-size: 0.9rem;
+        min-width: 900px; /* عرض أدنى لضمان التمرير */
     }
     
     .data-table th,
