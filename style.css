@@ -196,6 +196,11 @@ body {
     display: none;
 }
 
+.table-responsive-custom {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 .table-header {
     text-align: center;
     margin-bottom: 30px;
